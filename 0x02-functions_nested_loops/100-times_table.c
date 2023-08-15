@@ -1,43 +1,44 @@
-#include "main.h"
+#include"main.h"
 
 /**
- * print_times_table - prints the n times table
+ * print_times_table - function to print times table
  *
- * @n: n of type integer
+ * @n: n of type int
  */
+
 void print_times_table(int n)
 {
-	if (n < 0 || n > 15)
-		return;
+	int i, j, temp;
 
-	int row, column, result;
-
-	for (row = 0; row <= n; row++)
+	if (n <= 15 && n >= 0)
 	{
-		for (column = 0; column <= n; column++)
+		for (i = 0; i <= n; i++)
 		{
-			result = row * column;
+			_putchar(0 + '0');
 
-			if (column != 0)
+			for (j = 1; j <= n; j++)
+			{
 				_putchar(',');
-
-			if (result < 10)
 				_putchar(' ');
-			else if (result < 100)
-				_putchar(' ');
+				temp = i * j;
 
-			if (result >= 100)
-			{
-				_putchar(result / 100 + '0');
-				_putchar((result / 10) % 10 + '0');
-			}
-			else if (result >= 10)
-			{
-				_putchar(result / 10 + '0');
-			}
+				if (temp < 10)
+					_putchar(' ');
+				if (temp < 100)
+					_putchar(' ');
 
-			_putchar(result % 10 + '0');
+				if (temp >= 100)
+				{
+					_putchar((temp / 100) + '0');
+					_putchar((temp / 10) % 10 + '0');
+				}
+				else if (temp >= 10 && temp < 100)
+					_putchar((temp / 10) + '0');
+
+				_putchar((temp % 10) + '0');
+
+			}
+			_putchar('\n');
 		}
-		_putchar('\n');
 	}
 }

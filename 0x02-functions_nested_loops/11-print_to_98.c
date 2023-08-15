@@ -6,7 +6,6 @@
  *
  * @n: n of type integer
  */
-
 void print_to_98(int n)
 {
     int num;

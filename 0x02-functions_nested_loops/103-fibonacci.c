@@ -1,30 +1,22 @@
 #include <stdio.h>
 
-/**
- * main - Entry point of the program
- *
- * Return: Always 0 (Success)
- */
 int main(void)
 {
-	long fib1 = 1, fib2 = 2, next;
-	long sum = 2; // Initialize sum with the value of the first even term (2)
+    long sum = 2; /* Initialize sum with the value of the first even term (2) */
+    long a = 1;
+    long b = 2;
+    long c = a + b;
 
-	while (1)
-	{
-		next = fib1 + fib2;
+    while (c <= 4000000)
+    {
+        if (c % 2 == 0)
+            sum += c;
+        
+        a = b;
+        b = c;
+        c = a + b;
+    }
 
-		if (next > 4000000)
-			break;
-
-		if (next % 2 == 0)
-			sum += next;
-
-		fib1 = fib2;
-		fib2 = next;
-	}
-
-	printf("%ld\n", sum);
-
-	return (0);
+    printf("%ld\n", sum);
+    return 0;
 }

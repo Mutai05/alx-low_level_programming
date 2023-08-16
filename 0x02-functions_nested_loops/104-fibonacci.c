@@ -9,8 +9,8 @@
  */
 int main(void)
 {
-    unsigned long int a = 1, b = 2, c, n;
-    int count = 2; // Start from 2 since we have already printed the first two numbers
+    unsigned long int a = 1, b = 2, c;
+    int count = 2; /* Start from 2 since we have already printed the first two numbers */
 
     printf("%lu, %lu", a, b);
 
@@ -23,7 +23,7 @@ int main(void)
 
         count++;
 
-        // Print a newline after every 10 numbers
+        /* Print a newline after every 10 numbers */
         if (count % 10 == 0)
             printf("\n");
     }

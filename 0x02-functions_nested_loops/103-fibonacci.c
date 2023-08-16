@@ -1,5 +1,13 @@
 #include <stdio.h>
 
+/**
+ * main - Entry point
+ *
+ * Description: Computes and prints the sum of even-valued terms in
+ * the Fibonacci sequence whose values do not exceed 4,000,000.
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
     long sum = 2; /* Initialize sum with the value of the first even term (2) */
@@ -11,12 +19,12 @@ int main(void)
     {
         if (c % 2 == 0)
             sum += c;
-        
+
         a = b;
         b = c;
         c = a + b;
     }
 
     printf("%ld\n", sum);
-    return 0;
+    return (0);
 }

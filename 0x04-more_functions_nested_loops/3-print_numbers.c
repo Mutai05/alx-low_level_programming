@@ -1,21 +1,18 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- * main -> a program that prints the alphabets in lowercase,
- * followed by a new line
- * Return: Always 0
- */
- int main(void)
- {
+*print_numbers - print 0123456789
+* owned by Bwave ICT
+*Return: void
+*/
 
-	char ch;
-	for (ch = 'a'; ch <= 'z'; ch++)
+void print_numbers(void)
+{
+	char c;
+
+	for (c = '0'; c <= '9'; c++)
 	{
-		if (ch != 'q' && ch != 'e')
-		{
-			putchar(ch);
-		}
-		putchar(10);
-		return (0);
+	_putchar(c);
 	}
- }
+	_putchar('\n');
+}

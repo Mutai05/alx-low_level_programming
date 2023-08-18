@@ -1,15 +1,21 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
- * print_numbers - prints the numbers from 0 to 9, followed by a new line.
+ * main -> a program that prints the alphabets in lowercase,
+ * followed by a new line
+ * Return: Always 0
  */
-void print_numbers(void)
-{
-    char digit;
+ int main(void)
+ {
 
-    for (digit = '0'; digit <= '9'; digit++)
-    {
-        _putchar(digit);
-    }
-    _putchar('\n');
-}
+	char ch;
+	for (ch = 'a'; ch <= 'z'; ch++)
+	{
+		if (ch != 'q' && ch != 'e')
+		{
+			putchar(ch);
+		}
+		putchar(10);
+		return (0);
+	}
+ }

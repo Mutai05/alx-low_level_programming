@@ -9,17 +9,17 @@
  */
 int main(void)
 {
-    char password[7];
+    char password[15];
     int i;
-    
+
     srand(time(NULL));
 
-    for (i = 0; i < 6; i++)
+    for (i = 0; i < 14; i++)
     {
         password[i] = rand() % 94 + 33;  /* Generates a random character between ASCII 33 and 126 */
     }
     password[i] = '\0';  /* Null-terminate the string */
 
-    printf("%s\n", password);
+    printf("Tada! Congrats\n%s\n", password);
     return (0);
 }

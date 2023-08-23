@@ -1,23 +1,25 @@
 /**
- * _atoi - converts a string to an integer
- *
- * @s: string input parameter
- *
- * Return: converted integer from string
+ * _atoi - funtion that extract numbers from string
+ * @s: address of the string
+ * Return: The number extracted
  */
+
 int _atoi(char *s)
 {
-	int num = 0;
-	int sign = 1;
+	int i, sign = 1;
+	unsigned int n = 0;
 
-	do {
-		if (*s == '-')
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		if (s[i - 1] == 45)
 			sign *= -1;
-		else if (*s >= '0' && *s <= '9')
-			num = (num * 10) + (*s - '0');
-		else if (num > 0)
-			break;
-	} while (*s++);
-
-	return (num * sign);
+		if (s[i] >= '0' && s[i] <= '9')
+		{
+			n = n * 10 + (s[i] - 48);
+			if (s[i + 1] < '0' || s[i + 1] > '9')
+				break;
+		}
+	}
+	n *= sign;
+	return (n);
 }

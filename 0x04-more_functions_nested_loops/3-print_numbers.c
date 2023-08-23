@@ -5,17 +5,12 @@
  * followed by a new line
  * Return: Always 0
  */
- int main(void)
- {
 
-	char ch;
-	for (ch = 'a'; ch <= 'z'; ch++)
-	{
-		if (ch != 'q' && ch != 'e')
-		{
-			putchar(ch);
-		}
-		putchar(10);
-		return (0);
-	}
- }
+void print_numbers(void)
+{
+	int i;
+
+	for (i = 0; i <= 9; i++)
+		_putchar(i + '0');
+	_putchar('\n');
+}

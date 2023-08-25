@@ -1,28 +1,23 @@
 /**
- * cap_string - Capitalizes all words of a string.
- * @str: The string to capitalize.
- *
- * Return: A pointer to the modified string.
+ * cap_string - funtion that capital string
+ * @s: Address of the string
+ * Return: The uppercase @s address
  */
-char *cap_string(char *str)
+
+char *cap_string(char *s)
 {
-	int i = 0;
+	int i;
 
-	while (str[i] != '\0')
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (i == 0 || str[i - 1] == ' ' || str[i - 1] == '\t' || str[i - 1] == '\n' ||
-		    str[i - 1] == ',' || str[i - 1] == ';' || str[i - 1] == '.' || str[i - 1] == '!' ||
-		    str[i - 1] == '?' || str[i - 1] == '"' || str[i - 1] == '(' || str[i - 1] == ')' ||
-		    str[i - 1] == '{' || str[i - 1] == '}')
+		if (s[i] >= 97 && s[i] <= 122)
 		{
-			if (str[i] >= 'a' && str[i] <= 'z')
-			{
-				str[i] = str[i] - 32;
-			}
+			if ((s[i - 1] == ' ' || s[i - 1] == '\t' || s[i - 1] == '\n' ||
+				s[i - 1] == ',' || s[i - 1] == ';' || s[i - 1] == '.' || s[i - 1] == '!' ||
+				s[i - 1] == '?' || s[i - 1] == '"' || s[i - 1] == '(' || s[i - 1] == ')' ||
+				s[i - 1] == '{' || s[i - 1] == '}'))
+				s[i] -= 32;
 		}
-		i++;
 	}
-
-	return (str);
+	return (s);
 }
-

@@ -1,13 +1,19 @@
 #include <stdio.h>
 
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-    int a[] = {0, 1, 98, 3, 4};
+    int n;
+    int a[5];
     int *p;
 
-    p = a + 2;
-
-    printf("a[2] = %d\n", *p);
-
+    a[2] = 1024;
+    p = &n;
+    *(p + 5) = 98; /* This line assigns 98 to the memory location pointed to by p */
+    printf("a[2] = %d\n", a[2]);
     return (0);
 }

@@ -6,31 +6,29 @@
  * Return: number of bytes in the initial segment of s
  * which consist only of bytes from accept
  */
+
 unsigned int _strspn(char *s, char *accept)
 {
-    unsigned int count = 0;
-    int found;
+	int i, j, f;
 
-    while (*s)
-    {
-        found = 0;
-        while (*accept)
-        {
-            if (*s == *accept)
-            {
-                found = 1;
-                break;
-            }
-            accept++;
-        }
-        if (found)
-            count++;
-        else
-            break;
+	i = 0;
+	while (s[i] != '\0')
+	{
+		j = 0;
+		f = 1; /*flag status*/
+		while (accept[j] != '\0')
+		{
+			if (s[i] == accept[j])
+			{
+				f = 0; /*success*/
+				break;
+			}
+			j++;
+		}
+		if (f == 1)
+			break;
+		i++;
+	}
 
-        s++;
-        accept -= count;
-    }
-
-    return (count);
+	return (i);
 }

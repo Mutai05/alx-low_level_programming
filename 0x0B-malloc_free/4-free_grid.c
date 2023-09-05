@@ -9,16 +9,16 @@
  */
 void free_grid(int **grid, int height)
 {
-    int i;
+	int i;
 
-    /* Check if grid is NULL or height is non-positive */
-    if (grid == NULL || height <= 0)
-        return;
+	/* Check if grid is NULL or height is non-positive */
+	if (grid == NULL || height <= 0)
+		return;
 
-    /* Free memory for each row and then for the grid itself */
-    for (i = 0; i < height; i++)
-    {
-        free(grid[i]);
-    }
-    free(grid);
+	/* Free memory for each row and then for the grid itself */
+	for (i = 0; i < height; i++)
+	{
+		free(grid[i]);
+	}
+	free(grid);
 }

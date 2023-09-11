@@ -13,6 +13,12 @@ struct dog {
     char *owner;
 };
 
+/* Define a typedef for struct dog as dog_t */
+typedef struct dog dog_t;
+
 void init_dog(struct dog *d, char *name, float age, char *owner);
+void print_dog(struct dog *d);
+
+/* Rest of your function prototypes */
 
 #endif /* DOG_H */

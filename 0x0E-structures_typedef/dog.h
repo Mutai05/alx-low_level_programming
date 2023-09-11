@@ -7,11 +7,12 @@
  * @age: Age of the dog (float).
  * @owner: Owner of the dog (string).
  */
-struct dog
-{
-	char *name;
-	float age;
-	char *owner;
+struct dog {
+    char *name;
+    float age;
+    char *owner;
 };
+
+void init_dog(struct dog *d, char *name, float age, char *owner);
 
 #endif /* DOG_H */

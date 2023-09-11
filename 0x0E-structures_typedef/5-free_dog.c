@@ -9,13 +9,13 @@
  */
 void free_dog(dog_t *d)
 {
-    if (d != NULL)
-    {
-        /* Free the dynamically allocated name and owner strings */
-        free(d->name);
-        free(d->owner);
+	if (d != NULL)
+	{
+		/* Free the dynamically allocated name and owner strings */
+		free(d->name);
+		free(d->owner);
 
-        /* Free the dog structure itself */
-        free(d);
-    }
+		/* Free the dog structure itself */
+		free(d);
+	}
 }

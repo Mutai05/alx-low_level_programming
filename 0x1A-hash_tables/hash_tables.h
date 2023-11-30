@@ -1,8 +1,9 @@
 #ifndef HASH_TABLES_H
 #define HASH_TABLES_H
 
-#include <stdlib.h> /* Include necessary libraries */
+#include <stdlib.h>
 
+/* Structures */
 typedef struct hash_node_s
 {
     char *key;
@@ -18,6 +19,6 @@ typedef struct hash_table_s
 
 /* Function prototypes */
 hash_table_t *hash_table_create(unsigned long int size);
+unsigned long int hash_djb2(const unsigned char *str);
 
 #endif /* HASH_TABLES_H */
-

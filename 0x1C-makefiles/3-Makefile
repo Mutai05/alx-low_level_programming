@@ -1,18 +1,45 @@
+# Makefile for the school project with advanced rules
+
+# Compiler
 CC = gcc
+
+# Source files
 SRC = main.c school.c
+
+# Object files
 OBJ = $(SRC:.c=.o)
+
+# Executable name
 NAME = school
+
+# Program to delete files
 RM = rm -f
 
-all : $(OBJ)
+# Compilation flags
+CFLAGS = -Wall -Wextra -pedantic -Werror
+
+# Rule to build the executable
+all: $(NAME)
+
+$(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
-clean :
+# Rule to clean Emacs, Vim, and executable files
+clean:
 	$(RM) *~ $(NAME)
 
-oclean :
+# Rule to clean object files
+oclean:
 	$(RM) $(OBJ)
 
-fclean : clean oclean
+# Rule to clean Emacs, Vim, executable, and object files
+fclean: clean oclean
 
-re : oclean all
+# Rule to force recompilation of all source files
+re: fclean all
+
+# Rule to compile source files into object files
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+.PHONY: all clean oclean fclean re
